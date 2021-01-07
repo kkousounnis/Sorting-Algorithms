@@ -3,38 +3,28 @@ package sortingalgorithms.sortingalgorithms;
 import java.util.List;
 import sortingalgorithms.models.Tshirt;
 
-public class QuickSort {
-    
-    public void quickSortTShirts(List<Tshirt> arr, int low, int high, int sortByAttribute, int sortingType) {
+public class QuickSort implements IQuickSort {
+
+    @Override
+    public void quickSortTShirts(List<Tshirt> arr, int low, int high, int sortByAttribute, boolean isASC) {
         if (low < high) {
-            
+
             int pi = 0;
-            switch (sortingType) {
-                // ASC
-                case 0:
-                    pi = partition(arr, low, high, sortByAttribute, sortingType); // part <--- Size, Color, Fabric
 
-                    
-                    quickSortTShirts(arr, low, pi - 1, sortByAttribute, 0);
-                    quickSortTShirts(arr, pi + 1, high, sortByAttribute, 0);
-                    break;
-                // DESC
-                case 1:
-                    pi = partition(arr, low, high, sortByAttribute, sortingType); 
+            pi = partition(arr, low, high, sortByAttribute, isASC); 
 
-                    
-                    quickSortTShirts(arr, low, pi - 1, sortByAttribute, 1);
-                    quickSortTShirts(arr, pi + 1, high, sortByAttribute, 1);
-                    break;
-            }
+            quickSortTShirts(arr, low, pi - 1, sortByAttribute, isASC);
+            quickSortTShirts(arr, pi + 1, high, sortByAttribute, isASC);
+
         }
     }
-    
-    int partition(List<Tshirt> arr, int low, int high, int sortByAttribute, int sortingType) {
+
+    @Override
+    public int partition(List<Tshirt> arr, int low, int high, int sortByAttribute, boolean isASC) {
         Tshirt pivot = arr.get(high);
         int i = (low - 1); // index of smaller element 
         for (int j = low; j < high; j++) {
-            if (sortingType == 0) { // ASC
+            if (isASC) { // ASC
                 switch (sortByAttribute) {
                     // Size
                     case 0:
@@ -75,7 +65,7 @@ public class QuickSort {
                 switch (sortByAttribute) {
                     // Size
                     case 0:
-                        // If current element is smaller than the pivot 
+                        // If current element is bigger than the pivot 
                         if (arr.get(j).getSize().ordinal() > pivot.getSize().ordinal()) {
                             i++;
 
@@ -119,6 +109,5 @@ public class QuickSort {
 
         return i + 1;
     }
-
 
 }

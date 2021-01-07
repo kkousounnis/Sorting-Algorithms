@@ -1,5 +1,9 @@
 package sortingalgorithms.models;
 
+import sortingalgorithms.models.enums.Color;
+import sortingalgorithms.models.enums.Size;
+import sortingalgorithms.models.enums.Fabric;
+
 public class Tshirt {
 
     private String name;
