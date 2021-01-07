@@ -1,2 +1,2 @@
 # Sorting-Algorithms
-Comparative analysis implementation on Sorting ALgorithms quick Sort bubble sort bucket sort.
+Comparative analysis implementation on Sorting Algorithms quick Sort bubble sort bucket sort.
