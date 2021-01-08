@@ -5,17 +5,32 @@ import java.util.List;
 import sortingalgorithms.models.Tshirt;
 
 public class BubleSort implements IBubbleSort{
+    
+    public void bubbleSort(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i = 0; i < n-1; i++) 
+            for (int j = 0; j < n-i-1; j++) 
+                if (arr[j] > arr[j+1]) 
+                { 
+                    // swap arr[j+1] and arr[j] 
+                    int temp = arr[j]; 
+                    arr[j] = arr[j+1]; 
+                    arr[j+1] = temp; 
+                } 
+    }
 
     @Override
-    public List<Tshirt> bubbleSortTShirtsBySize(List<Tshirt> arr, int sortByAttribute, boolean isAsc) // sortingType = 0 - ASC
+    public List<Tshirt> bubbleSortTShirts(List<Tshirt> arr2, int sortByAttribute, boolean isAsc) // sortingType = 0 - ASC
     // sortingType = 1 - DESC
     {
-        List<Tshirt> arr2 = new ArrayList<>(arr);
+        //List<Tshirt> arr2 = new ArrayList<>(arr);
         int n = arr2.size();
         if (isAsc) {//Ascending
             switch (sortByAttribute) {
                 // Size
                 case 0:
+                    System.out.println("ascending by size");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getSize().ordinal() > arr2.get(j + 1).getSize().ordinal()) {
@@ -26,9 +41,16 @@ public class BubleSort implements IBubbleSort{
                             }
                         }
                     }
+//                    System.out.println("-----------------------------------");
+//                    for(Tshirt tshirt: arr2){
+//                        System.out.println(arr2.size());
+//                        System.out.println(tshirt);
+//                    }
+//                     System.out.println("");   
                     break;
                 //color
                 case 1:
+                    System.out.println("ascending by color");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getColor().ordinal() > arr2.get(j + 1).getColor().ordinal()) {
@@ -42,6 +64,7 @@ public class BubleSort implements IBubbleSort{
                     break;
                 //fabric
                 case 2:
+                    System.out.println("ascending by fabric");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getFabric().ordinal() > arr2.get(j + 1).getFabric().ordinal()) {
@@ -59,6 +82,7 @@ public class BubleSort implements IBubbleSort{
             switch (sortByAttribute) {
                 // Size
                 case 0:
+                    System.out.println("descending by size");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getSize().ordinal() < arr2.get(j + 1).getSize().ordinal()) {
@@ -72,6 +96,7 @@ public class BubleSort implements IBubbleSort{
                     break;
                 //color
                 case 1:
+                    System.out.println("descending by color");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getColor().ordinal() < arr2.get(j + 1).getColor().ordinal()) {
@@ -84,6 +109,7 @@ public class BubleSort implements IBubbleSort{
                     }
                     break;
                 case 2:
+                    System.out.println("descending by fabric");
                     for (int i = 0; i < n - 1; i++) {
                         for (int j = 0; j < n - i - 1; j++) {
                             if (arr2.get(j).getFabric().ordinal() < arr2.get(j + 1).getFabric().ordinal()) {
@@ -100,5 +126,7 @@ public class BubleSort implements IBubbleSort{
 
         return (arr2);
     }
+    
+    
 
 }
