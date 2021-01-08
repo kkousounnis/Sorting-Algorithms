@@ -9,6 +9,8 @@ import sortingalgorithms.sortingalgorithms.QuickSort;
 public class SortingAlgorithms {
 
     public static void main(String[] args) {
+        
+        //Quick Sort Implementation
         QuickSort quickSort = new QuickSort();
         int numberOfRandomTshirt = 7;
         List<Tshirt> ListrandomTshirts = new ArrayList<>(numberOfRandomTshirt);
@@ -27,8 +29,26 @@ public class SortingAlgorithms {
 
         //Random tshirt list Ascending by color
         ListrandomTshirts = createRandomList(ListrandomTshirts, numberOfRandomTshirt);
-        System.out.println("\nQuick Sorted Array By Size Ascending");
+        System.out.println("\nQuick Sorted Array By Color Ascending");
         quickSort.quickSortTShirts(ListrandomTshirts, 0, numberOfRandomTshirt - 1, 1, true);
+        printSortedList(ListrandomTshirts, numberOfRandomTshirt);
+        
+        //Random tshirt list Descending by color
+        ListrandomTshirts = createRandomList(ListrandomTshirts, numberOfRandomTshirt);
+        System.out.println("\nQuick Sorted Array By Color Descending");
+        quickSort.quickSortTShirts(ListrandomTshirts, 0, numberOfRandomTshirt - 1, 1, false);
+        printSortedList(ListrandomTshirts, numberOfRandomTshirt);
+        
+        //Random tshirt list Ascending by fabric
+        ListrandomTshirts = createRandomList(ListrandomTshirts, numberOfRandomTshirt);
+        System.out.println("\nQuick Sorted Array By Fabric Ascending");
+        quickSort.quickSortTShirts(ListrandomTshirts, 0, numberOfRandomTshirt - 1, 2, true);
+        printSortedList(ListrandomTshirts, numberOfRandomTshirt);
+        
+        //Random tshirt list Descending by fabric
+        ListrandomTshirts = createRandomList(ListrandomTshirts, numberOfRandomTshirt);
+        System.out.println("\nQuick Sorted Array By Fabric Descending");
+        quickSort.quickSortTShirts(ListrandomTshirts, 0, numberOfRandomTshirt - 1, 2, false);
         printSortedList(ListrandomTshirts, numberOfRandomTshirt);
     }
 
