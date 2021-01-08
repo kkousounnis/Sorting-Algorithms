@@ -10,7 +10,7 @@ public class SortingAlgorithms {
 
     public static void main(String[] args) {
         
-        //Quick Sort Implementation
+        //------------------------------Quick Sort--------------------------//
         QuickSort quickSort = new QuickSort();
         int numberOfRandomTshirt = 7;
         List<Tshirt> ListrandomTshirts = new ArrayList<>(numberOfRandomTshirt);
@@ -50,6 +50,9 @@ public class SortingAlgorithms {
         System.out.println("\nQuick Sorted Array By Fabric Descending");
         quickSort.quickSortTShirts(ListrandomTshirts, 0, numberOfRandomTshirt - 1, 2, false);
         printSortedList(ListrandomTshirts, numberOfRandomTshirt);
+        
+        //-----------------------Buble Sort-----------------------------------//
+        
     }
 
     public static List<Tshirt> createRandomList(List<Tshirt> ListrandomTshirts,
