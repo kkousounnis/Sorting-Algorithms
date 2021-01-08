@@ -96,6 +96,20 @@ public class SortingAlgorithms {
         bubblesort.bubbleSortTShirts(ListrandomTshirtsACBubl, 1, false);
         printSortedList(ListrandomTshirtsACBubl, numberOfRandomTshirt1);
         
+        List<Tshirt> ListrandomTshirtsAFBubl = new ArrayList<>(numberOfRandomTshirt1);
+        //Random tshirt list Ascending by fabric
+        ListrandomTshirtsAFBubl = createRandomList(ListrandomTshirtsAFBubl, numberOfRandomTshirt1);
+        System.out.println("Buble Sort list By Fabric Ascending");
+        bubblesort.bubbleSortTShirts(ListrandomTshirtsAFBubl, 2, true);
+        printSortedList(ListrandomTshirtsAFBubl, numberOfRandomTshirt1);
+        
+        List<Tshirt> ListrandomTshirtsDFBubl = new ArrayList<>(numberOfRandomTshirt1);
+        //Random tshirt list Ascending by fabric
+        ListrandomTshirtsDFBubl = createRandomList(ListrandomTshirtsDFBubl, numberOfRandomTshirt1);
+        System.out.println("Buble Sort list By Fabric Ascending");
+        bubblesort.bubbleSortTShirts(ListrandomTshirtsDFBubl, 2, false);
+        printSortedList(ListrandomTshirtsDFBubl, numberOfRandomTshirt1);
+        
         
 
     }
