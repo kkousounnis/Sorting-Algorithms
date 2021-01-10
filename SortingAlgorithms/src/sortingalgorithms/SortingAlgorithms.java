@@ -7,6 +7,7 @@ import sortingalgorithms.models.Tshirt;
 import sortingalgorithms.sortingalgorithms.BubleSort;
 import sortingalgorithms.sortingalgorithms.BucketSort;
 import sortingalgorithms.sortingalgorithms.QuickSort;
+import sortingalgorithms.sortingalgorithms.SortByColorSizeFabric;
 
 public class SortingAlgorithms {
 
@@ -15,7 +16,7 @@ public class SortingAlgorithms {
         //------------------------------Quick Sort--------------------------//
         System.out.println("/----------Quick Sort-------------------------/");
         QuickSort quickSort = new QuickSort();
-        int numberOfRandomTshirt = 7;
+        int numberOfRandomTshirt = 40;
 
         List<Tshirt> ListrandomTshirtsAS = new ArrayList<>(numberOfRandomTshirt);
 
@@ -66,7 +67,7 @@ public class SortingAlgorithms {
         //-----------------------Buble Sort-----------------------------------//
         System.out.println("/-------------------Bubble Sort-----------------/");
 
-        int numberOfRandomTshirt1 = 7;
+        int numberOfRandomTshirt1 = 40;
 
         BubleSort bubblesort = new BubleSort();
         List<Tshirt> ListrandomTshirtsASBubl = new ArrayList<>(numberOfRandomTshirt1);
@@ -112,7 +113,7 @@ public class SortingAlgorithms {
         printSortedList(ListrandomTshirtsDFBubl, numberOfRandomTshirt1);
 
         //--------------------Bucket Sort-----------------------------------//
-        int numberOfRandomTshirt2 = 7;
+        int numberOfRandomTshirt2 = 40;
         BucketSort bucketsort = new BucketSort();
 
         List<Tshirt> ListrandomTshirtsASBucket = new ArrayList<>(numberOfRandomTshirt2);
@@ -156,6 +157,13 @@ public class SortingAlgorithms {
         System.out.println("Bucket Sort list By Fabric Descending");
         ListrandomTshirtsDFBucket = bucketsort.bucketSort(ListrandomTshirtsDFBucket, 6, 2, false);
         printSortedList(ListrandomTshirtsDFBucket, numberOfRandomTshirt2);
+        
+        //-----------------Sort By Size Color Fabric-------------------------//
+        int numberOfRandomTshirt3 = 5;
+        List<Tshirt> ListrandomTshirtsFSC = new ArrayList<>(numberOfRandomTshirt2);
+        SortByColorSizeFabric s = new SortByColorSizeFabric();
+        
+        s.bucketSortTShirtsBySizeThenColorThenFabric(ListrandomTshirtsFSC, numberOfRandomTshirt3); 
 
     }
 

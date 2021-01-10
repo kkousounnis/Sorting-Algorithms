@@ -4,27 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import sortingalgorithms.models.Tshirt;
 
-public class BubleSort implements IBubbleSort{
-    
-    public void bubbleSort(int arr[]) 
-    { 
-        int n = arr.length; 
-        for (int i = 0; i < n-1; i++) 
-            for (int j = 0; j < n-i-1; j++) 
-                if (arr[j] > arr[j+1]) 
-                { 
-                    // swap arr[j+1] and arr[j] 
-                    int temp = arr[j]; 
-                    arr[j] = arr[j+1]; 
-                    arr[j+1] = temp; 
-                } 
-    }
+public class BubleSort implements IBubbleSort {
 
     @Override
     public List<Tshirt> bubbleSortTShirts(List<Tshirt> arr2, int sortByAttribute, boolean isAsc) // sortingType = 0 - ASC
     // sortingType = 1 - DESC
     {
-        //List<Tshirt> arr2 = new ArrayList<>(arr);
         int n = arr2.size();
         if (isAsc) {//Ascending
             switch (sortByAttribute) {
@@ -41,12 +26,7 @@ public class BubleSort implements IBubbleSort{
                             }
                         }
                     }
-//                    System.out.println("-----------------------------------");
-//                    for(Tshirt tshirt: arr2){
-//                        System.out.println(arr2.size());
-//                        System.out.println(tshirt);
-//                    }
-//                     System.out.println("");   
+
                     break;
                 //color
                 case 1:
@@ -126,7 +106,5 @@ public class BubleSort implements IBubbleSort{
 
         return (arr2);
     }
-    
-    
 
 }
