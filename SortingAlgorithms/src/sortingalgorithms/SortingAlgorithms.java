@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import sortingalgorithms.models.RandomTshirt;
 import sortingalgorithms.models.Tshirt;
-import sortingalgorithms.sortingalgorithms.BubleSort;
-import sortingalgorithms.sortingalgorithms.BucketSort;
-import sortingalgorithms.sortingalgorithms.QuickSort;
+import sortingalgorithms.sortingalgorithms.BubleSortImpl;
+import sortingalgorithms.sortingalgorithms.BucketSortImpl;
+import sortingalgorithms.sortingalgorithms.QuickSortImpl;
 import sortingalgorithms.sortingalgorithms.SortByColorSizeFabric;
 
 public class SortingAlgorithms {
@@ -15,7 +15,7 @@ public class SortingAlgorithms {
 
         //------------------------------Quick Sort--------------------------//
         System.out.println("/----------Quick Sort-------------------------/");
-        QuickSort quickSort = new QuickSort();
+        QuickSortImpl quickSort = new QuickSortImpl();
         int numberOfRandomTshirt = 40;
 
         List<Tshirt> ListrandomTshirtsAS = new ArrayList<>(numberOfRandomTshirt);
@@ -69,7 +69,7 @@ public class SortingAlgorithms {
 
         int numberOfRandomTshirt1 = 40;
 
-        BubleSort bubblesort = new BubleSort();
+        BubleSortImpl bubblesort = new BubleSortImpl();
         List<Tshirt> ListrandomTshirtsASBubl = new ArrayList<>(numberOfRandomTshirt1);
         //Random tshirt list Ascending by size
         ListrandomTshirtsASBubl = createRandomList(ListrandomTshirtsASBubl, numberOfRandomTshirt1);
@@ -114,7 +114,7 @@ public class SortingAlgorithms {
 
         //--------------------Bucket Sort-----------------------------------//
         int numberOfRandomTshirt2 = 40;
-        BucketSort bucketsort = new BucketSort();
+        BucketSortImpl bucketsort = new BucketSortImpl();
 
         List<Tshirt> ListrandomTshirtsASBucket = new ArrayList<>(numberOfRandomTshirt2);
         //Random tshirt list Ascending by size
