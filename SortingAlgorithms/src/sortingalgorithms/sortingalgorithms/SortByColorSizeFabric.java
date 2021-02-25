@@ -10,8 +10,8 @@ public class SortByColorSizeFabric implements ISortByColorSizeFabric {
     @Override
     public void bucketSortTShirtsBySizeThenColorThenFabric(List<Tshirt> ranTShirts, int sortingType) {
         List<Tshirt> tShirts = new ArrayList<>();
-        QuickSort quicksort = new QuickSort();
-        BucketSort bucketsort = new BucketSort();
+        QuickSortImpl quicksort = new QuickSortImpl();
+        BucketSortImpl bucketsort = new BucketSortImpl();
         // Step 1 - Create noOfBuckets buckets, Size.length
         int noOfBuckets = Size.values().length;
 
